@@ -34,7 +34,7 @@ class Student {
                   return "Молодець!";
             }
 
-            if((this.getAverageMark() > 90 && averageAttendance < 0.9) || (this.getAverageMark < 90 && averageAttendance > 0.9)){
+            if((this.getAverageMark() > 90 && averageAttendance < 0.9) || (this.getAverageMark() < 90 && averageAttendance > 0.9)){
                   return "Добре, але можна краще ";
             }
 
