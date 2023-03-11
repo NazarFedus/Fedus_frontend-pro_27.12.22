@@ -65,11 +65,11 @@ processProducts();
 // }
 
 
-function createTab(venue, value, dataOfItem = ''){
+function createTab(venue, value, dataOfItem = null){
      const tab = document.createElement('button');
           tab.classList.add('tab')
           tab.innerText = value
-          tab.setAttribute('id', dataOfItem.id)
+          if(dataOfItem !== null) tab.setAttribute('id', dataOfItem.id)
           venue.appendChild(tab)
      return tab;
 }
@@ -95,8 +95,6 @@ function showListOfProducts(category, arrayOfProducts){
                productItems.forEach(e => e.classList.remove('active'));
                item.classList.add('active');
                const searchElement = products.filter(e => e.id == item.getAttribute('id'))
-               console.log(searchElement, 'searchElement');
-
 
                showProductInfo(...searchElement)
           })
@@ -108,11 +106,33 @@ function showListOfProducts(category, arrayOfProducts){
 // third block (blockInfo)
 
 function showProductInfo(product){
-     // const box = document.createElement('div');
-     console.log(product)
+     const listOfBlocksInfo = blockInfo.querySelectorAll('.box__info')
+     if(listOfBlocksInfo) listOfBlocksInfo.forEach(e => blockInfo.removeChild(e))
+
+     // box to wrap all content:
+     const box = document.createElement('div');
+     box.className = 'box__info';
+     blockInfo.appendChild(box)
+
+     // content:
      const title = document.createElement('h1');
      title.innerText = product.title;
      title.classList.add('title')
+     box.appendChild(title)
 
-     blockInfo.appendChild(title)
+     const img = document.createElement('img');
+     img.setAttribute('src', product.image);
+     img.className = 'img';
+     box.appendChild(img)
+
+     const price = document.createElement('span')
+     price.innerText = `Price: ${product.price} USD`;
+     box.appendChild(price);
+
+
+     const buttonBuy = document.createElement('button');
+     buttonBuy.className = 'boxInfo__btn-buy'
+     buttonBuy.innerText = "Buy now"
+     box.appendChild(buttonBuy)
 }
+

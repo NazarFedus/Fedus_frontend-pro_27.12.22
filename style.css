@@ -4,7 +4,7 @@
      box-sizing: border-box;
 }
 body{
-     background-color: grey;
+     background-color: white;
 }
 
 .container{
@@ -44,4 +44,32 @@ body{
 
 .title{
      text-align: center;
+     font-size: 15px;
+}
+
+.box__info{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 5px;
+     background-color: white;
+
+}
+.img{
+     max-width: 50%;
+     max-height: 50%;
+}
+
+.boxInfo__btn-buy{
+     background-color: #4CAF50; /* колір фону */
+     border: none;
+     color: white;
+     padding: 10px 20px;
+     text-align: center;
+     text-decoration: none;
+     font-size: 16px;
+     margin: 10px;
+     border-radius: 5px;
+     cursor: pointer;
 }
