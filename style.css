@@ -16,16 +16,27 @@ body{
 }
 
 .block{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
      flex-basis: 33.33%;
 }
 
 .tab{
      background-color: #ddd;
     color: #333;
-    border: none;
+    border: 1px solid black;
     outline: none;
     cursor: pointer;
+    font-size: 20px;
     padding: 10px 20px;
+    margin: 10px;
     margin-right: 5px;
     margin-bottom: -1px;
+}
+.tab:hover {
+     background-color: #bbb;
+}
+.active{
+     background-color: #bbb;
 }
