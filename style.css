@@ -40,3 +40,8 @@ body{
 .active{
      background-color: #bbb;
 }
+
+
+.title{
+     text-align: center;
+}
