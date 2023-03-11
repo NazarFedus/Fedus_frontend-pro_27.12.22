@@ -73,3 +73,27 @@ body{
      border-radius: 5px;
      cursor: pointer;
 }
+
+.popup{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width: 750px;
+     height: 400px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: white;
+     border: 2px solid #333;
+     position: fixed;
+}
+.popup__close-btn{
+     position: absolute;
+     top: 5px;
+     right: 15px;
+     font-size: 28px;
+     background-color: transparent;
+     border: none;
+     cursor: pointer;
+}

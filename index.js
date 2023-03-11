@@ -1,9 +1,28 @@
 const body = document.querySelector('body');
 
+// popup:
+const popup = document.createElement('div');
+popup.className = 'popup'
+const title = document.createElement('h1');
+title.className = "title"
+title.style.paddingTop = '10px';
+title.style.color = 'green'
+title.innerText = "Ви успішно придбали даний товар:"
+popup.appendChild(title)
+const closePopUp = document.createElement('button');
+closePopUp.innerHTML = '&times;';
+closePopUp.className = 'popup__close-btn'
+closePopUp.addEventListener('click', () => {
+     document.body.removeChild(popup)
+})
+popup.appendChild(closePopUp)
+
+//main container:
 const container = document.createElement('div');
 container.classList.add('container')
 body.appendChild(container);
 
+//three main blocks
 const tabs = document.createElement('div');
 const listProducts = document.createElement('div');
 const blockInfo = document.createElement('div');
@@ -15,6 +34,7 @@ blockInfo.classList.add('block');
 container.appendChild(tabs)
 container.appendChild(listProducts)
 container.appendChild(blockInfo)
+
 
 
 // Get data
@@ -47,22 +67,9 @@ async function processProducts() {
                     showListOfProducts(element.innerText, PRODUCTS)
                })
           })
-
-     // ======================= //
-
-
 }
 
 processProducts();
-
-
-// function addListener(element, className, array){
-//      element.addEventListener('click', () => {
-//           array.forEach(e => e.classList.remove(className))
-//           element.classList.add(className);
-//           sh
-//      })
-// }
 
 
 function createTab(venue, value, dataOfItem = null){
@@ -114,7 +121,23 @@ function showProductInfo(product){
      box.className = 'box__info';
      blockInfo.appendChild(box)
 
-     // content:
+     contentOfInfoBlock(product, box)
+
+     const buttonBuy = document.createElement('button');
+     buttonBuy.className = 'boxInfo__btn-buy'
+     buttonBuy.innerText = "Buy now"
+     box.appendChild(buttonBuy)
+     buttonBuy.addEventListener('click', () => {
+          invokePopUp(product)
+     })
+}
+
+function invokePopUp(product){
+     document.body.appendChild(popup)
+     contentOfInfoBlock(product, popup)
+}
+
+function contentOfInfoBlock(product, box){
      const title = document.createElement('h1');
      title.innerText = product.title;
      title.classList.add('title')
@@ -128,11 +151,4 @@ function showProductInfo(product){
      const price = document.createElement('span')
      price.innerText = `Price: ${product.price} USD`;
      box.appendChild(price);
-
-
-     const buttonBuy = document.createElement('button');
-     buttonBuy.className = 'boxInfo__btn-buy'
-     buttonBuy.innerText = "Buy now"
-     box.appendChild(buttonBuy)
 }
-
