@@ -1,4 +1,5 @@
 const body = document.querySelector('body');
+// all products which customer bought;
 const purchase = [];
 
 //main container:
@@ -69,8 +70,7 @@ function showListOfProducts(category, arrayOfProducts){
      const products = arrayOfProducts.filter(item => item.category === category);
 
      // clear boxInfo from previous list of products:
-     const productsList = listProducts.querySelectorAll('.tab')
-     if(productsList) productsList.forEach(e => listProducts.removeChild(e))
+     clearPrevious(listProducts, '.tab')
 
      // create boxInfo "products list":
      const productItems = products.map(item => {
@@ -97,8 +97,7 @@ function showListOfProducts(category, arrayOfProducts){
 function showProductInfo(product){
      // const listOfBlocksInfo = blockInfo.querySelectorAll('.box__info')
      // if(listOfBlocksInfo) listOfBlocksInfo.forEach(e => blockInfo.removeChild(e))
-
-     clear(blockInfo, '.box__info')
+     clearPrevious(blockInfo, '.box__info')
 
      // box to wrap all content:
      const box = document.createElement('div');
@@ -134,10 +133,22 @@ function contentOfInfoBlock(product, box){
      box.appendChild(price);
 }
 
-
-function clear(parent, className){
+// clear previous list
+function clearPrevious(parent, className){
      const list = parent.querySelectorAll(className);
      if(list) list.forEach(e => parent.removeChild(e));
+}
+
+//clear all lists and active category
+function globalClear(){
+     // remove active class in block "category";
+     tabs.querySelector('.active').classList.remove('active');
+
+     // remove elements in block "listOfProducts";
+     listProducts.querySelectorAll('.tab').forEach(e => listProducts.removeChild(e));
+
+     // remove box of info in block "blockInfo";
+     blockInfo.removeChild(blockInfo.querySelector('.box__info'));
 }
 
 // popup:
@@ -154,6 +165,6 @@ closePopUp.innerHTML = '&times;';
 closePopUp.className = 'popup__close-btn'
 closePopUp.addEventListener('click', () => {
      document.body.removeChild(popup)
-
+     globalClear()
 })
 popup.appendChild(closePopUp)
