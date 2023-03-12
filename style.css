@@ -46,6 +46,11 @@ body{
      text-align: center;
      font-size: 15px;
 }
+.popup__title{
+     position: absolute;
+     font-size: 14px;
+     top: 5px;
+}
 
 .box__info{
      display: flex;
@@ -79,6 +84,7 @@ body{
      justify-content: center;
      align-items: center;
      flex-direction: column;
+     gap: 10px;
      width: 750px;
      height: 400px;
      top: 50%;

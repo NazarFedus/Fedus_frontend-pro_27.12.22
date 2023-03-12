@@ -74,7 +74,6 @@ function showListOfProducts(category, arrayOfProducts){
 
      // create boxInfo "products list":
      const productItems = products.map(item => {
-          console.log(item)
           return createTab(listProducts, item.title, item);
      })
 
@@ -109,14 +108,21 @@ function showProductInfo(product){
      buttonBuy.innerText = "Buy now"
      box.appendChild(buttonBuy)
      buttonBuy.addEventListener('click', () => {
+          clearPrevious(popup, '.box__info')
           purchase.push(product)
           document.body.appendChild(popup)
-          contentOfInfoBlock(product, popup)
+          const wrapBox = document.createElement('div');
+          wrapBox.className = 'box__info';
+          wrapBox.style.backgroundColor = 'transparent'
+          popup.appendChild(wrapBox)
+          contentOfInfoBlock(product, wrapBox)
      })
 }
+// function createDiv(className){
+//      const element =
+// }
 
 function contentOfInfoBlock(product, box){
-     console.log(box)
      const title = document.createElement('h1');
      title.innerText = product.title;
      title.classList.add('title')
@@ -154,21 +160,17 @@ function globalClear(){
 const popup = document.createElement('div');
 popup.className = 'popup'
 const title = document.createElement('h1');
-title.className = "title"
+title.className = "popup__title"
 title.style.paddingTop = '10px';
 title.style.color = 'green'
-title.innerText = "Ви успішно придбали даний товар:"
+title.innerText = "You have successfully purchased this product:"
 popup.appendChild(title)
 
 const closePopUp = document.createElement('button');
 closePopUp.innerHTML = '&times;';
 closePopUp.className = 'popup__close-btn'
 closePopUp.addEventListener('click', () => {
-     console.dir(popup)
-     
 
-          console.log(popup.firstChild)
-          popup.removeChild(popup.firstChild)
      document.body.removeChild(popup)
      globalClear()
 })
