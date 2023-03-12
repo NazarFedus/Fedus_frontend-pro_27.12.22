@@ -134,24 +134,6 @@ function contentOfInfoBlock(product, box){
      box.appendChild(price);
 }
 
-// clear previous list
-function clearPrevious(parent, className){
-     const list = parent.querySelectorAll(className);
-     if(list) list.forEach(e => parent.removeChild(e));
-}
-
-//clear all lists and active category
-function globalClear(){
-     // remove active class in block "category";
-     tabs.querySelector('.active').classList.remove('active');
-
-     // remove elements in block "listOfProducts";
-     listProducts.querySelectorAll('.tab').forEach(e => listProducts.removeChild(e));
-
-     // remove box of info in block "blockInfo";
-     blockInfo.removeChild(blockInfo.querySelector('.box__info'));
-}
-
 // popup:
 const popup = document.createElement('div');
 popup.className = 'popup'
