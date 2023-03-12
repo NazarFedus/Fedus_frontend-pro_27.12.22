@@ -95,8 +95,6 @@ function showListOfProducts(category, arrayOfProducts){
 // third block (blockInfo)
 
 function showProductInfo(product){
-     // const listOfBlocksInfo = blockInfo.querySelectorAll('.box__info')
-     // if(listOfBlocksInfo) listOfBlocksInfo.forEach(e => blockInfo.removeChild(e))
      clearPrevious(blockInfo, '.box__info')
 
      // box to wrap all content:
@@ -118,6 +116,7 @@ function showProductInfo(product){
 }
 
 function contentOfInfoBlock(product, box){
+     console.log(box)
      const title = document.createElement('h1');
      title.innerText = product.title;
      title.classList.add('title')
@@ -160,10 +159,16 @@ title.style.paddingTop = '10px';
 title.style.color = 'green'
 title.innerText = "Ви успішно придбали даний товар:"
 popup.appendChild(title)
+
 const closePopUp = document.createElement('button');
 closePopUp.innerHTML = '&times;';
 closePopUp.className = 'popup__close-btn'
 closePopUp.addEventListener('click', () => {
+     console.dir(popup)
+     
+
+          console.log(popup.firstChild)
+          popup.removeChild(popup.firstChild)
      document.body.removeChild(popup)
      globalClear()
 })
