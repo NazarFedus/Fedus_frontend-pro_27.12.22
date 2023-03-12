@@ -41,15 +41,11 @@ body{
      background-color: #bbb;
 }
 
+/* BlockInfo */
 
 .title{
      text-align: center;
      font-size: 15px;
-}
-.popup__title{
-     position: absolute;
-     font-size: 14px;
-     top: 5px;
 }
 
 .box__info{
@@ -79,6 +75,8 @@ body{
      cursor: pointer;
 }
 
+/* PopUp */
+
 .popup{
      display: flex;
      justify-content: center;
@@ -102,4 +100,10 @@ body{
      background-color: transparent;
      border: none;
      cursor: pointer;
+}
+.popup__title{
+     position: absolute;
+     font-size: 14px;
+     top: 5px;
+     color: green;
 }

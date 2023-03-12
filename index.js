@@ -33,7 +33,6 @@ async function fetchData() {
 
 async function processProducts() {
      const PRODUCTS = await fetchData();
-     console.log(PRODUCTS);
 
      // categories
      const categories = [];
@@ -92,7 +91,6 @@ function showListOfProducts(category, arrayOfProducts){
 
 
 // third block (blockInfo)
-
 function showProductInfo(product){
      clearPrevious(blockInfo, '.box__info')
 
@@ -118,10 +116,8 @@ function showProductInfo(product){
           contentOfInfoBlock(product, wrapBox)
      })
 }
-// function createDiv(className){
-//      const element =
-// }
 
+// create content about product
 function contentOfInfoBlock(product, box){
      const title = document.createElement('h1');
      title.innerText = product.title;
@@ -161,8 +157,6 @@ const popup = document.createElement('div');
 popup.className = 'popup'
 const title = document.createElement('h1');
 title.className = "popup__title"
-title.style.paddingTop = '10px';
-title.style.color = 'green'
 title.innerText = "You have successfully purchased this product:"
 popup.appendChild(title)
 
@@ -170,7 +164,6 @@ const closePopUp = document.createElement('button');
 closePopUp.innerHTML = '&times;';
 closePopUp.className = 'popup__close-btn'
 closePopUp.addEventListener('click', () => {
-
      document.body.removeChild(popup)
      globalClear()
 })
