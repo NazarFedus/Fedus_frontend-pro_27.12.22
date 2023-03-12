@@ -1,21 +1,5 @@
 const body = document.querySelector('body');
-
-// popup:
-const popup = document.createElement('div');
-popup.className = 'popup'
-const title = document.createElement('h1');
-title.className = "title"
-title.style.paddingTop = '10px';
-title.style.color = 'green'
-title.innerText = "Ви успішно придбали даний товар:"
-popup.appendChild(title)
-const closePopUp = document.createElement('button');
-closePopUp.innerHTML = '&times;';
-closePopUp.className = 'popup__close-btn'
-closePopUp.addEventListener('click', () => {
-     document.body.removeChild(popup)
-})
-popup.appendChild(closePopUp)
+const purchase = [];
 
 //main container:
 const container = document.createElement('div');
@@ -34,8 +18,6 @@ blockInfo.classList.add('block');
 container.appendChild(tabs)
 container.appendChild(listProducts)
 container.appendChild(blockInfo)
-
-
 
 // Get data
 async function fetchData() {
@@ -113,8 +95,10 @@ function showListOfProducts(category, arrayOfProducts){
 // third block (blockInfo)
 
 function showProductInfo(product){
-     const listOfBlocksInfo = blockInfo.querySelectorAll('.box__info')
-     if(listOfBlocksInfo) listOfBlocksInfo.forEach(e => blockInfo.removeChild(e))
+     // const listOfBlocksInfo = blockInfo.querySelectorAll('.box__info')
+     // if(listOfBlocksInfo) listOfBlocksInfo.forEach(e => blockInfo.removeChild(e))
+
+     clear(blockInfo, '.box__info')
 
      // box to wrap all content:
      const box = document.createElement('div');
@@ -128,13 +112,10 @@ function showProductInfo(product){
      buttonBuy.innerText = "Buy now"
      box.appendChild(buttonBuy)
      buttonBuy.addEventListener('click', () => {
-          invokePopUp(product)
+          purchase.push(product)
+          document.body.appendChild(popup)
+          contentOfInfoBlock(product, popup)
      })
-}
-
-function invokePopUp(product){
-     document.body.appendChild(popup)
-     contentOfInfoBlock(product, popup)
 }
 
 function contentOfInfoBlock(product, box){
@@ -152,3 +133,27 @@ function contentOfInfoBlock(product, box){
      price.innerText = `Price: ${product.price} USD`;
      box.appendChild(price);
 }
+
+
+function clear(parent, className){
+     const list = parent.querySelectorAll(className);
+     if(list) list.forEach(e => parent.removeChild(e));
+}
+
+// popup:
+const popup = document.createElement('div');
+popup.className = 'popup'
+const title = document.createElement('h1');
+title.className = "title"
+title.style.paddingTop = '10px';
+title.style.color = 'green'
+title.innerText = "Ви успішно придбали даний товар:"
+popup.appendChild(title)
+const closePopUp = document.createElement('button');
+closePopUp.innerHTML = '&times;';
+closePopUp.className = 'popup__close-btn'
+closePopUp.addEventListener('click', () => {
+     document.body.removeChild(popup)
+
+})
+popup.appendChild(closePopUp)
