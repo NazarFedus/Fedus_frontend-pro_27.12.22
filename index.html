@@ -8,6 +8,64 @@
      <title>Document</title>
 </head>
 <body>
+
+     <div class="form_wrapper" id="form">
+          <form action="/register">
+               <label>
+                    <span>Name:</span>
+                    <input type="text" name="username" id="username" required>
+               </label>
+               <label>
+                    <span>Surname:</span>
+                    <input type="text" name="surname" id="surname" required>
+               </label>
+               <label>
+                    <span>City:</span>
+                    <select name="city" id="city">
+                         <option>Lviv</option>
+                         <option>Kyiv</option>
+                         <option>Odessa</option>
+                         <option>Kharkiv</option>
+                         <option>Chernivtsi</option>
+                    </select>
+               </label>
+
+               <label>
+                    <span>Store of Nova Poshta:</span>
+                    <select name="store" id="store">
+
+                    </select>
+               </label>
+
+               <label>
+                    <span>Type of payment:</span>
+                    <div>
+                         <input type="checkbox" id="scales" name="scales">
+                         <label for="scales">Bank card</label>
+                       </div>
+                       <div>
+                         <input type="checkbox" id="scales" name="scales" >
+                         <label for="scales">Cash on delivery</label>
+                       </div>
+               </label>
+
+               <label>
+                    <span>Your purchase:</span>
+
+               </label>
+
+               <label>
+                    <span>Amount: <input type="number"></span>
+               </label>
+
+               <label>
+                    <span>Comment:</span>
+                    <textarea id="сomment" name="сomment" rows="5" cols="33"></textarea>
+               </label>
+          </form>
+     </div>
+
+
      <script src="./index.js"></script>
      <script src="./utils.js"></script>
 </body>

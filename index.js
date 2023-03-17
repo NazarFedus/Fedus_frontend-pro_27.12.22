@@ -20,6 +20,10 @@ container.appendChild(tabs)
 container.appendChild(listProducts)
 container.appendChild(blockInfo)
 
+//popup-form
+const form = document.getElementById('form');
+
+
 // Get data
 async function fetchData() {
      try {
@@ -27,7 +31,8 @@ async function fetchData() {
        const data = await response.json();
        return data;
      } catch (error) {
-       console.error(error);
+          tabs.innerText = "Nothing found";
+          console.error(error);
      }
 }
 

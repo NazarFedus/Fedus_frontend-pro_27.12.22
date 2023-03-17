@@ -107,3 +107,19 @@ body{
      top: 5px;
      color: green;
 }
+
+/* Form */
+
+#form{
+     display: flex;
+     flex-direction: column;
+}
+label span{
+     display: block;
+}
+
+.form_wrapper{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
