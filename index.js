@@ -171,7 +171,10 @@ function cretePopUpContent(product){
      buttonBuy.style.left = '600px'
 
      buttonBuy.addEventListener('click', () => {
-
+          if(true){
+               document.body.removeChild(popup)
+               globalClear()
+          }
      })
 
 
@@ -190,8 +193,4 @@ function cretePopUpContent(product){
 
 // popup:
 
-// const title = document.createElement('h1');
-// title.className = "popup__title"
-// title.innerText = "You have successfully purchased this product:"
-// popup.appendChild(title)
 

@@ -19,27 +19,27 @@ function clearPrevious(parent, className){
 
 // form validation:
 
-const formName = form.name;
-console.log(formName)
+// const formName = form.name;
+// console.log(formName)
 
-const inputs = [
-     {
-          name: 'name',
-		inputEl: nameInput,
-		validationsRules: [validateStringLength, validateForValue],
-		isValid: false,
-		needToValidate: true,
-		errorEl: nameInput.parentElement.querySelector('p')
-     },
-     {
-          name: 'surname',
-		inputEl: nameInput,
-		validationsRules: [validateStringLength, validateForValue],
-		isValid: false,
-		needToValidate: true,
-		errorEl: nameInput.parentElement.querySelector('p')
-     },
-     {
+// const inputs = [
+//      {
+//           name: 'name',
+// 		inputEl: nameInput,
+// 		validationsRules: [validateStringLength, validateForValue],
+// 		isValid: false,
+// 		needToValidate: true,
+// 		errorEl: nameInput.parentElement.querySelector('p')
+//      },
+//      {
+//           name: 'surname',
+// 		inputEl: nameInput,
+// 		validationsRules: [validateStringLength, validateForValue],
+// 		isValid: false,
+// 		needToValidate: true,
+// 		errorEl: nameInput.parentElement.querySelector('p')
+//      },
+//      {
 
-     }
-]
+//      }
+// ]
