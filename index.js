@@ -166,6 +166,13 @@ function cretePopUpContent(product){
      img_block.appendChild(img)
 
      const buttonBuy = createButtonBuy(img_block);
+     buttonBuy.style.position = 'fixed'
+     buttonBuy.style.top = '362px'
+     buttonBuy.style.left = '600px'
+
+     buttonBuy.addEventListener('click', () => {
+
+     })
 
 
      // button to close popup
