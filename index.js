@@ -21,7 +21,11 @@ container.appendChild(listProducts)
 container.appendChild(blockInfo)
 
 //popup-form
+const form_wrapper = document.getElementById('form_wrapper');
 const form = document.getElementById('form');
+
+console.log(form)
+
 
 
 // Get data
@@ -106,20 +110,23 @@ function showProductInfo(product){
 
      contentOfInfoBlock(product, box)
 
+     const buttonBuy = createButtonBuy(box);
+
+     buttonBuy.addEventListener('click', () => {
+          const popup = cretePopUpContent(product)
+          clearPrevious(popup, '.box__info')
+          purchase.push(product)
+     })
+}
+
+// create button buy;
+function createButtonBuy(parent){
      const buttonBuy = document.createElement('button');
      buttonBuy.className = 'boxInfo__btn-buy'
      buttonBuy.innerText = "Buy now"
-     box.appendChild(buttonBuy)
-     buttonBuy.addEventListener('click', () => {
-          clearPrevious(popup, '.box__info')
-          purchase.push(product)
-          document.body.appendChild(popup)
-          const wrapBox = document.createElement('div');
-          wrapBox.className = 'box__info';
-          wrapBox.style.backgroundColor = 'transparent'
-          popup.appendChild(wrapBox)
-          contentOfInfoBlock(product, wrapBox)
-     })
+     parent.appendChild(buttonBuy)
+
+     return buttonBuy
 }
 
 // create content about product
@@ -139,19 +146,45 @@ function contentOfInfoBlock(product, box){
      box.appendChild(price);
 }
 
-// popup:
-const popup = document.createElement('div');
-popup.className = 'popup'
-const title = document.createElement('h1');
-title.className = "popup__title"
-title.innerText = "You have successfully purchased this product:"
-popup.appendChild(title)
+function cretePopUpContent(product){
+     const popup = document.createElement('div');
+     popup.className = 'popup'
+     document.body.appendChild(popup)
 
-const closePopUp = document.createElement('button');
-closePopUp.innerHTML = '&times;';
-closePopUp.className = 'popup__close-btn'
-closePopUp.addEventListener('click', () => {
-     document.body.removeChild(popup)
-     globalClear()
-})
-popup.appendChild(closePopUp)
+     // left block (form)
+     form_wrapper.classList.remove('hide');
+     popup.appendChild(form_wrapper);
+
+     //right block
+     const img_block = document.createElement('div');
+     img_block.classList.add('img-block');
+     popup.appendChild(img_block)
+
+     const img = document.createElement('img');
+     img.setAttribute('src', product.image);
+     img.className = 'img';
+     img_block.appendChild(img)
+
+     const buttonBuy = createButtonBuy(img_block);
+
+
+     // button to close popup
+     const closePopUp = document.createElement('button');
+     closePopUp.innerHTML = '&times;';
+     closePopUp.className = 'popup__close-btn'
+     closePopUp.addEventListener('click', () => {
+          document.body.removeChild(popup)
+          globalClear()
+     })
+     popup.appendChild(closePopUp)
+
+     return popup
+}
+
+// popup:
+
+// const title = document.createElement('h1');
+// title.className = "popup__title"
+// title.innerText = "You have successfully purchased this product:"
+// popup.appendChild(title)
+
