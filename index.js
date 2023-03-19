@@ -22,9 +22,6 @@ container.appendChild(blockInfo)
 const form_wrapper = document.getElementById('form_wrapper');
 const form = document.getElementById('form');
 
-console.log(form)
-
-
 
 // Get data
 async function fetchData() {
@@ -113,7 +110,6 @@ function showProductInfo(product){
      buttonBuy.addEventListener('click', () => {
           const popup = cretePopUpContent(product)
           clearPrevious(popup, '.box__info')
-          purchase.push(product)
      })
 }
 
@@ -176,7 +172,12 @@ function cretePopUpContent(product){
           //      document.body.removeChild(popup)
           //      globalClear()
           // }
-          processOfValidation()
+          const result = processOfValidation(product);
+          if(result){
+               document.body.removeChild(popup)
+               globalClear()
+               clearDataInputs()
+          } 
 
      })
 

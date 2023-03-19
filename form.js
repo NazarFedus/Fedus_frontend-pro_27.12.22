@@ -103,14 +103,13 @@ function chooseOne(){
 
 }
 
-function processOfValidation(){
+function processOfValidation(product){
      const validatedArr = inputs.map(el => {
           if(el.needToValidate){
                const isValidAll = el.validationsRules.map(func => {
                     return func(el.inputEl.value, el.name)
                })
                if(isValidAll.every(e => e === true)){
-                    console.log(el.inputEl.value)
                     el.isValid = true;
                     el.errorMessage !== false ? el.errorMessage.classList.add('hide') : '';
                     return true
@@ -122,7 +121,6 @@ function processOfValidation(){
                return true
           }
      })
-     console.log(validatedArr)
      if(validatedArr.every(element => element === true)){
           const data = {};
           inputs.forEach(element => {
@@ -134,9 +132,12 @@ function processOfValidation(){
                     data[element.name] = element.inputEl.value;
                }
           })
-          sendData(data);
+          sendData(data, product);
+          alert('Your order has been successfully placed')
+          return true
      } else {
           console.log('something wrong');
+          return false
      }
 }
 
@@ -157,8 +158,12 @@ function showListOfStores(city = 'Kyiv'){
      })
 }
 
-function sendData(data){
+function sendData(data, product){
      console.log(data)
      console.log('send on server')
+     data.product = product;
+     purchase.push(data);
+     console.log(`All purchases:`)
+     console.log(purchase)
 }
 

@@ -29,3 +29,4 @@ function clearDataInputs(){
           if(input.errorMessage) input.errorMessage.classList.add('hide');
      })
 }
+
