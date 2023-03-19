@@ -37,6 +37,7 @@ const inputs = [
           isValid: true,
           needToValidate: false,
           needToClear: false,
+          byDefault: 'Kyiv',
           errorMessage: false
      },
      {
@@ -55,6 +56,7 @@ const inputs = [
           isValid: false,
           needToValidate: false,
           needToClear: true,
+          byDefault: form_bankCardOption,
           errorMessage: false
      },
      {
@@ -64,6 +66,7 @@ const inputs = [
           isValid: false,
           needToValidate: false,
           needToClear: true,
+          byDefault: 1,
           errorMessage: document.getElementById('errorAmount')
      },
      {

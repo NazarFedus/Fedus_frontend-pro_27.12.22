@@ -21,9 +21,11 @@ function clearPrevious(parent, className){
 function clearDataInputs(){
      inputs.forEach(input => {
           if(input.needToClear) input.inputEl.value = '';
-          if(input.name === 'city') input.inputEl.value = 'Kyiv'
-          if(input.name === 'amount') input.inputEl.value = 1;
-          if(input.name === 'typeOfPayment') input.inputEl[0].checked = true
+          if(input.byDefault){
+               input.name === 'typeOfPayment'
+                    ? input.inputEl[0].checked = true
+                    : input.inputEl.value = input.byDefault;
+          }
           if(input.errorMessage) input.errorMessage.classList.add('hide');
      })
 }
