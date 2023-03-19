@@ -136,3 +136,7 @@ label span{
      align-items: center;
      position: relative;
 }
+
+p{
+     color: red;
+}

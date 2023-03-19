@@ -188,6 +188,7 @@ function cretePopUpContent(product){
      closePopUp.addEventListener('click', () => {
           document.body.removeChild(popup)
           globalClear()
+          clearDataInputs()
      })
      popup.appendChild(closePopUp)
 

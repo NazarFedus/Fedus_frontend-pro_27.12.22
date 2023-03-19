@@ -14,10 +14,12 @@
                <label>
                     <span>Name:</span>
                     <input type="text" name="username" id="username" required>
+                    <p class="hide" id="errorName">Please enter valid name.</p>
                </label>
                <label>
                     <span>Surname:</span>
                     <input type="text" name="surname" id="surname" required>
+                    <p class="hide" id="errorSurname">Please enter valid surname.</p>
                </label>
                <label>
                     <span>City:</span>
@@ -40,7 +42,7 @@
                <label>
                     <span>Type of payment:</span>
                     <div>
-                         <input type="radio" id="bank" name="paymentOption" value="bankCard">
+                         <input type="radio" id="bank" name="paymentOption" value="bankCard" checked>
                          <label for="scales">Bank card</label>
                        </div>
                        <div>
@@ -50,19 +52,21 @@
                </label>
 
                <label>
-                    <span>Amount: <input type="number" name="amount"></span>
+                    <span>Amount: <input type="number" name="amount" min="1" max="20" value="1"></span>
+                    <p class="hide" id="errorAmount">Please enter valid amount.</p>
                </label>
 
                <label>
                     <span>Comment:</span>
                     <textarea id="сomment" name="сomment" rows="5" cols="33"></textarea>
+                    <p class="hide" id="errorComment">Please write a comment. No less than 25 letters.</p>
                </label>
           </form>
      </div>
 
 
      <script src="./index.js"></script>
-     <script src="./components.js"></script>
+     <script src="./form.js"></script>
      <script src="./utils.js"></script>
      <script src="data.js"></script>
 </body>
