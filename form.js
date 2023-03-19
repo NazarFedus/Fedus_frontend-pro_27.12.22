@@ -133,7 +133,7 @@ function processOfValidation(product){
                }
           })
           sendData(data, product);
-          alert('Your order has been successfully placed')
+          setTimeout(openModal, 500);
           return true
      } else {
           console.log('something wrong');

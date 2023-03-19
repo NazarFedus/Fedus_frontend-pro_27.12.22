@@ -93,7 +93,6 @@ function showListOfProducts(category, arrayOfProducts){
 
 }
 
-
 // third block (blockInfo)
 function showProductInfo(product){
      clearPrevious(blockInfo, '.box__info')
@@ -167,20 +166,14 @@ function cretePopUpContent(product){
      buttonBuy.style.left = '600px'
 
      buttonBuy.addEventListener('click', () => {
-          // if(true){
-          //      console.log('data sent on server')
-          //      document.body.removeChild(popup)
-          //      globalClear()
-          // }
           const result = processOfValidation(product);
           if(result){
                document.body.removeChild(popup)
                globalClear()
                clearDataInputs()
-          } 
+          }
 
      })
-
 
      // button to close popup
      const closePopUp = document.createElement('button');
@@ -195,7 +188,5 @@ function cretePopUpContent(product){
 
      return popup
 }
-
-// popup:
 
 
