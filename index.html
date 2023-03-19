@@ -22,11 +22,11 @@
                <label>
                     <span>City:</span>
                     <select name="city" id="city">
-                         <option>Lviv</option>
                          <option>Kyiv</option>
-                         <option>Odessa</option>
                          <option>Kharkiv</option>
-                         <option>Chernivtsi</option>
+                         <option>Lviv</option>
+                         <option>Odessa</option>
+                         <option>Dnipro</option>
                     </select>
                </label>
 
@@ -40,22 +40,17 @@
                <label>
                     <span>Type of payment:</span>
                     <div>
-                         <input type="checkbox" id="scales" name="scales">
+                         <input type="radio" id="bank" name="paymentOption" value="bankCard">
                          <label for="scales">Bank card</label>
                        </div>
                        <div>
-                         <input type="checkbox" id="scales" name="scales" >
-                         <label for="scales">Cash on delivery</label>
+                         <input type="radio" id="cash" name="paymentOption" value="cashOnDelivery">
+                         <label for="CashOnDelivery">Cash on delivery</label>
                        </div>
                </label>
 
                <label>
-                    <span>Your purchase:</span>
-
-               </label>
-
-               <label>
-                    <span>Amount: <input type="number"></span>
+                    <span>Amount: <input type="number" name="amount"></span>
                </label>
 
                <label>
@@ -67,6 +62,7 @@
 
 
      <script src="./index.js"></script>
+     <script src="./components.js"></script>
      <script src="./utils.js"></script>
 </body>
 </html>
