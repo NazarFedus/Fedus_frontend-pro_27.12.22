@@ -20,11 +20,10 @@ function clearPrevious(parent, className){
 // clear all data from inputs in form:
 function clearDataInputs(){
      inputs.forEach(input => {
-          if(input.needToClear){
-               input.inputEl.value = '';
-          }
-          if(input.errorMessage){
-               input.errorMessage.classList.add('hide');
-          }
+          if(input.needToClear) input.inputEl.value = '';
+          if(input.name === 'city') input.inputEl.value = 'Kyiv'
+          if(input.name === 'amount') input.inputEl.value = 1;
+          if(input.name === 'typeOfPayment') input.inputEl[0].checked = true
+          if(input.errorMessage) input.errorMessage.classList.add('hide');
      })
 }

@@ -1,5 +1,5 @@
 // form validation:
-const formName = form.username;
+const formName = form.name;
 const formSurname = form.surname;
 const formCity = form.city;
 const formStore = form.store;
@@ -13,7 +13,7 @@ const formComment = form.сomment;
 
 const inputs = [
      {
-          name: 'username',
+          name: 'name',
 		inputEl: formName,
 		validationsRules: [validateStringLength, validateForValue],
 		isValid: false,
@@ -78,7 +78,7 @@ const inputs = [
 ]
 
 function validateStringLength(string, typeOfInput){
-     if(typeOfInput === 'username'){
+     if(typeOfInput === 'name'){
           return string ? string.length > 2 : false;
      }
      if(typeOfInput === 'surname'){
@@ -90,7 +90,7 @@ function validateStringLength(string, typeOfInput){
 }
 
 function validateForValue(value, typeOfInput){
-     if(typeOfInput === 'username' || typeOfInput === 'surname'){
+     if(typeOfInput === 'name' || typeOfInput === 'surname'){
           return typeof value === 'string' && value.trim().length > 0;
      }
      return !!value.trim();
