@@ -92,13 +92,13 @@ const inputs = [
 
 function validateStringLength(string, typeOfInput){
      if(typeOfInput === 'name'){
-          return string.length > 2;
+          return string ? string.length > 2 : false;
      }
      if(typeOfInput === 'surname'){
-          return string.length >= 2;
+          return string ? string.length >= 2 : false;
      }
      if(typeOfInput === 'comment'){
-          return string.length > 25;
+          return string ? string.length > 25 : false;
      }
 }
 
@@ -107,7 +107,7 @@ function validateForValue(value, typeOfInput){
           return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value)
      }
      if(typeOfInput === 'name' || typeOfInput === 'surname'){
-          return !isNaN(+value.trim())
+          return !isNaN(value ? +value.trim() : false)
      }
      return !!value.trim();
 }
@@ -145,7 +145,7 @@ function processOfValidation(){
 // ======= //
 
 formCity.addEventListener('change', (e) => {
-     showListOfStores(event.target.value)
+     showListOfStores(e.target.value)
 })
 
 function showListOfStores(city = 'Kyiv'){
