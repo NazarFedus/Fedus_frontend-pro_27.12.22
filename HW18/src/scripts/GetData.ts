@@ -1,24 +1,33 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import {API} from './constants'
 
-// interface Idata{
-
-// }
-
-
-export function fetching(){
+export function getData(){
      const [data, setData] = useState<any>('');
 
-     async function getData(API: string) {
+     async function getPost(id: number) {
           try{
-               await axios.get(API).then(res => setData(res.data))
-               return data
+               const res = await axios.get(`${API}posts/${id}`)
+               setData({
+                    ...data,
+                    post: res.data,
+               })
+               return res.data
           } catch(e){
                console.error(e)
                return {message: "Somehing wrong with requiest!"}
           }
      }
 
-     return {getData}
+     async function getComment(id: number){
+          const res = await axios.get(`${API}comments?postId=${id}`);
+          setData({
+               ...data,
+               comments: res.data
+          })
+          return res.data
+     }
+
+     return {getPost, getComment}
 }
 
