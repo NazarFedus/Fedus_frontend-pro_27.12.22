@@ -28,7 +28,7 @@ export function FindPost(){
           <div className="container">
                {currentState === 'findPost' &&
                     <>
-                         <input type={'number'} min='1' max='100' placeholder="Enter the id..." className="input" ref={inputValue}></input>
+                         <input type={'number'} min='1' max='100' placeholder="Id" className="input" ref={inputValue}></input>
                          {!isValid && <h1>Please enter the correct value!</h1>}
 
                          <button onClick={clickHandler}>Search</button>
