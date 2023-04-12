@@ -1,0 +1,16 @@
+header{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+
+     width: 100%;
+     height: 65px;
+     background-color: #3F4E5D;
+}
+.header__catalog{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 20px;
+     padding: 0px 100px;
+}
