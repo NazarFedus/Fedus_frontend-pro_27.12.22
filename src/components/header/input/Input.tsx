@@ -10,15 +10,8 @@ const Input = () => {
 
      const body = document.body;
      body.addEventListener('click', (e) => {
-          if(e.target.tagName === 'INPUT'){
-               setState(true)
-               console.log(state)
-          } else {
-               setState(false)
-               console.log(state)
-          }
-          console.log(e.target)
-          console.log('click on body')
+          if(!e.target) return
+          e.target.tagName === 'INPUT' ? setState(true) : setState(false)
      })
 
   return (
@@ -33,12 +26,14 @@ const Input = () => {
             <FontAwesomeIcon
               icon={faMicrophone}
               style={{ color: "#fcfcfc", transform: "scale(1.1)" }}
+              onClick={(e) => e.preventDefault()}
             />
           </button>
           <button>
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               style={{ color: "#fcfcfc", transform: "scale(1.1)" }}
+              onClick={(e) => e.preventDefault()}
             />
           </button>
         </div>
