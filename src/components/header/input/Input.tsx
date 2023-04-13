@@ -4,26 +4,28 @@ import React, { useEffect, useState } from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faMicrophone, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 
-type MyCallback = (arg: boolean) => void;
+const Input = () => {
 
-const Input = ({ onStateChange }: { onStateChange: MyCallback }) => {
   const [state, setState] = useState<boolean>(false);
 
-  function handleStateChange() {
-    const newState = !state;
-    console.log(newState);
-    setState(newState);
-    onStateChange(newState);
-    console.log(state);
-    console.log("click from Default");
-  }
+     const body = document.body;
+     body.addEventListener('click', (e) => {
+          if(e.target.tagName === 'INPUT'){
+               setState(true)
+               console.log(state)
+          } else {
+               setState(false)
+               console.log(state)
+          }
+          console.log(e.target)
+          console.log('click on body')
+     })
 
   return (
     <div className="header__input-wrapper">
       <form>
         <input
           placeholder={!state ? "Пошук" : "Active"}
-          onClick={handleStateChange}
         ></input>
 
         <div className="icon-wrapper">

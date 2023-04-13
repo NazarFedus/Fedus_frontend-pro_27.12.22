@@ -7,13 +7,6 @@ import Input from './input/Input'
 
 export default function Header(){
 
-     const [inputFocus, setInputFocus] = useState<boolean>(false);
-
-     function handleStateChange(newState: boolean){
-          console.log(newState)
-          setInputFocus(newState)
-          console.log(inputFocus)
-     }
      return(
           <header>
                <div className='header__catalog'>
@@ -21,11 +14,10 @@ export default function Header(){
                     <Typography variant='h6' style={{fontFamily: 'Arial', color: 'white'}}>Каталог</Typography>
                </div>
 
-               <Input onStateChange={handleStateChange}/>
+               <Input />
 
                <div>
-                    <button>
-                    </button>
+                    <button></button>
                     <button></button>
                     <button></button>
                     <button></button>
