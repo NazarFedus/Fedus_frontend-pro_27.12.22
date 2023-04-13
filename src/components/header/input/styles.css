@@ -1,0 +1,29 @@
+.header__input-wrapper{
+     display: flex;
+     align-items: center;
+     flex-direction: row;
+     height: 72%;
+     padding: 2px 10px;
+     width: 400px;
+     background-color: #3d4247;
+     border: none;
+     border-radius: 5px;
+}
+
+form{
+     display: flex;
+     align-items: center;
+     flex-direction: row;
+     height: 72%;
+     padding: 2px 10px;
+     width: 400px;
+     background-color: #3d4247;
+     border: none;
+     border-radius: 5px;
+}
+.icon-wrapper{
+     display: flex;
+     gap: 15px;
+     width: 100%;
+     justify-content: flex-end;
+}
