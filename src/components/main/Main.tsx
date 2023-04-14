@@ -23,7 +23,7 @@ export default function Main({ activeValue }: string) {
     <div className="main__content">
       <div className="forcatalog"></div>
       <div className="content">
-        {!products && <p>Loading...</p>}
+        {!products && <p>Chose the category...</p>}
         {products &&
           products.map((item) => (
             <Product product={item} key={item.id}></Product>
