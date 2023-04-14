@@ -1,0 +1,16 @@
+.main__content{
+     display: flex;
+     justify-content: flex-end;
+     flex-direction: row;
+     padding: 0px 20px;
+}
+.forcatalog{
+     width: 400px;
+}
+.content{
+     width: 1000px;
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     gap: 10px;
+}

@@ -3,7 +3,11 @@ import axios from 'axios'
 import './style.css'
 import Tab from './tab/Tab';
 
-export default function SideBar(){
+type ISideBar = {
+     onActive: (active: string) => void;
+}
+
+export default function SideBar(props: ISideBar){
 
      const [catalog, setCatalog] = useState([]);
      const [activeCategory, setActiveCategory] = useState<string>('');
@@ -21,7 +25,9 @@ export default function SideBar(){
      function clickToActive(active: string){
           console.log(`From sidebar: ${active}`)
           setActiveCategory(active)
+          props.onActive(active)
      }
+
 
      return(
           <div className='catalog'>
