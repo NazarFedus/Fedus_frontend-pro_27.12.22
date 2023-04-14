@@ -1,0 +1,9 @@
+.tab{
+
+}
+.tab:hover{
+     background-color: red;
+}
+.tab-name{
+     font-size: 15px;
+}

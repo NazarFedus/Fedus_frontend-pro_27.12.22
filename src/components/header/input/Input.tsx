@@ -6,19 +6,19 @@ import {faMicrophone, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons
 
 const Input = () => {
 
-  const [state, setState] = useState<boolean>(false);
+  const [isActive, setIsActive] = useState<boolean>(false);
 
      const body = document.body;
      body.addEventListener('click', (e) => {
           if(!e.target) return
-          e.target.tagName === 'INPUT' ? setState(true) : setState(false)
+          (e.target as Element).nodeName === 'INPUT' ? setIsActive(true) : setIsActive(false)
      })
 
   return (
     <div className="header__input-wrapper">
       <form>
         <input
-          placeholder={!state ? "Пошук" : "Active"}
+          placeholder={!isActive ? "Пошук" : "Active"}
         ></input>
 
         <div className="icon-wrapper">
