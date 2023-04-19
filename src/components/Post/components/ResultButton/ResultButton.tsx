@@ -2,13 +2,17 @@ import styles from './ResultButton.module.scss'
 
 import React, {useState} from 'react';
 
-export default function ResultButton({onClick}){
+interface IResultBtn {
+     onClick: (isActive: boolean) => void;
+}
+
+export default function ResultButton(props: IResultBtn){
 
      const [showResult, setShowResult] = useState(false)
 
      function clickHandler(){
           setShowResult(showResult => !showResult)
-          onClick(!showResult)
+          props.onClick(!showResult)
      }
 
      return(

@@ -6,7 +6,12 @@ import { smiles } from "./SmileList.mock";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faFaceSmile, faFaceSmileWink, faFaceAngry, faFaceSmileBeam, faFaceGrinHearts} from '@fortawesome/free-solid-svg-icons'
 
-export default function SmileList({findWinner, sendWinner}) {
+interface ISmileList {
+  findWinner: boolean,
+  sendWinner: ({}) => void
+}
+
+export default function SmileList({findWinner, sendWinner}: ISmileList) {
   const [count, setCount] = useState([
     { name: "smile", icon: faFaceSmile, count: 0 },
     { name: "smileWink", icon: faFaceSmileWink, count: 0 },
