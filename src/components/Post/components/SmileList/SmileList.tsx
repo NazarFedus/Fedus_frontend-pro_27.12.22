@@ -4,14 +4,15 @@ import React, { useEffect, useState } from "react";
 import { smiles } from "./SmileList.mock";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faFaceSmile, faFaceSmileWink, faFaceAngry, faFaceSmileBeam, faFaceGrinHearts} from '@fortawesome/free-solid-svg-icons'
 
 export default function SmileList({findWinner, sendWinner}) {
   const [count, setCount] = useState([
-    { name: "smile", count: 0 },
-    { name: "smileWink", count: 0 },
-    { name: "angry", count: 0 },
-    { name: "smileBeam", count: 0 },
-    { name: "greanHeart", count: 0 },
+    { name: "smile", icon: faFaceSmile, count: 0 },
+    { name: "smileWink", icon: faFaceSmileWink, count: 0 },
+    { name: "angry", icon: faFaceAngry, count: 0 },
+    { name: "smileBeam", icon: faFaceSmileBeam, count: 0 },
+    { name: "greanHeart", icon: faFaceGrinHearts, count: 0 },
   ]);
 
   const [find, setFind] = useState(false);
@@ -27,7 +28,6 @@ export default function SmileList({findWinner, sendWinner}) {
   if(find) {
      passWinner()
   }
-
 
   useEffect(() => {
      const biggestCount = getBiggestCount()
