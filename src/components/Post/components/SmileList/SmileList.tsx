@@ -1,19 +1,11 @@
 import styles from "./SmileList.module.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { smiles } from "./SmileList.mock";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface ISmiles {
-  smile: number;
-  smileWink: number;
-  angry: number;
-  smileBeam: number;
-  greanHeart: number;
-}
-
-export default function SmileList() {
+export default function SmileList({findWinner, sendWinner}) {
   const [count, setCount] = useState([
     { name: "smile", count: 0 },
     { name: "smileWink", count: 0 },
@@ -21,6 +13,30 @@ export default function SmileList() {
     { name: "smileBeam", count: 0 },
     { name: "greanHeart", count: 0 },
   ]);
+
+  const [find, setFind] = useState(false);
+  const [winner, setWinner] = useState({});
+
+  function getBiggestCount(){
+     return count.map(item => item.count).sort((a, b) => b-a)[0]
+  }
+
+  function passWinner(){
+     sendWinner(winner)
+  }
+  if(find) {
+     passWinner()
+  }
+
+
+  useEffect(() => {
+     const biggestCount = getBiggestCount()
+     setWinner(count.filter(item => item.count === biggestCount ? item.name : null))
+  }, [count])
+
+  useEffect(() => {
+     setFind(findWinner)
+  }, [findWinner])
 
   function addSmileCount(event: any){
      const increaseSmile = event.currentTarget.getAttribute('value');
@@ -30,7 +46,6 @@ export default function SmileList() {
           }
           return item;
      })
-
      setCount(updateCount)
   }
 
