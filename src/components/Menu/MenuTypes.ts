@@ -1,27 +1,13 @@
-export interface IBurger {
+export interface IProduct {
      id: number,
      name: string,
      price: number,
-     calories: number
+     calories: number,
+     type: string,
+     choosed: boolean
 }
-
-export interface IFilling {
-     id: number,
-     name: string,
-     price: number,
-     calories: number
-}
-
-export interface ISupplements {
-     id: number,
-     name: string,
-     price: number,
-     calories: number
-}
-
-
 export interface IMenu {
-     burgers: IBurger[],
-     filling: IFilling[],
-     supplements: ISupplements[]
+     burgers: IProduct[],
+     filling: IProduct[],
+     supplements: IProduct[]
 }

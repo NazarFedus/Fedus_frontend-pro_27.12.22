@@ -6,47 +6,61 @@ export const menu: IMenu = {
                id: 1,
                name: 'Small',
                price: 50,
-               calories: 20
+               calories: 20,
+               type: 'BURGER',
+               choosed: false
           },
           {
                id: 2,
                name: 'Big',
                price: 100,
-               calories: 40
+               calories: 40,
+               type: 'BURGER',
+               choosed: false
           }
      ],
      filling: [
           {
                id: 1,
-               name: 'cheese',
+               name: 'Cheese',
                price: 10,
-               calories: 20
+               calories: 20,
+               type: 'FILLING',
+               choosed: false
           },
           {
                id: 2,
-               name: 'salad',
+               name: 'Salad',
                price: 20,
-               calories: 5
+               calories: 5,
+               type: 'FILLING',
+               choosed: false
           },
           {
                id: 3,
-               name: 'potato',
+               name: 'Potato',
                price: 15,
-               calories: 10
+               calories: 10,
+               type: 'FILLING',
+               choosed: false
           }
      ],
      supplements: [
           {
                id: 1,
-               name: 'seasoning',
+               name: 'Seasoning',
                price: 15,
-               calories: 0
+               calories: 0,
+               type: 'SUPPLEMENTS',
+               choosed: false
           },
           {
                id: 2,
-               name: 'mayo',
+               name: 'Mayo',
                price: 20,
-               calories: 5
+               calories: 5,
+               type: 'SUPPLEMENTS',
+               choosed: false
           }
      ]
 }

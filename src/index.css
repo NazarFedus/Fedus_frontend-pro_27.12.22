@@ -4,6 +4,6 @@
 
 @layer components {
      .card{
-          @apply 
+          @apply w-full flex flex-col gap-[10px] justify-center items-center border-2 rounded-lg
      }
 }
