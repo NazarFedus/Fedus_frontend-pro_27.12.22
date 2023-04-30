@@ -4,6 +4,9 @@
 
 @layer components {
      .card{
-          @apply w-full flex flex-col gap-[10px] justify-center items-center border-2 rounded-lg
+          @apply flex flex-row gap-[10px] justify-center items-center border-2 rounded-lg p-[10px] m-[5px]
+     }
+     .category{
+          @apply flex-[33] flex flex-col items-center
      }
 }

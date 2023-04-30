@@ -40,7 +40,7 @@ function findImage(name: string) {
 const ProductCard = ({ product }: { product: IProduct }) => {
   const { dispatch } = React.useContext(MenuContext);
   return (
-    <div className="">
+    <div className="card">
       <div>
         <img
           src={findImage(product.name)}
@@ -55,6 +55,13 @@ const ProductCard = ({ product }: { product: IProduct }) => {
       >
         Choose
       </button>
+      {product.type !== 'BURGER' && <button
+        onClick={() =>
+          dispatch({ type: `DELETE_${product.type}`, payload: product.name })
+        }
+      >
+        Delete
+      </button>}
     </div>
   );
 };
