@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useReducer } from 'react'
 
 import { MenuContext, initialState, reducer } from '../reducers/context'
 

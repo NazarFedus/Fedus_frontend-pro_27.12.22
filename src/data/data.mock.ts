@@ -1,14 +1,16 @@
-export const menu = {
+import { IMenu } from "../components/Menu/MenuTypes";
+
+export const menu: IMenu = {
      burgers: [
           {
                id: 1,
-               size: 'Small',
+               name: 'Small',
                price: 50,
                calories: 20
           },
           {
                id: 2,
-               size: 'Big',
+               name: 'Big',
                price: 100,
                calories: 40
           }
