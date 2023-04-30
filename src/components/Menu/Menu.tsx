@@ -20,6 +20,7 @@ const Menu: FC = () => {
   useEffect(() => {
      setOrder(showOrder())
   }, [state])
+  
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col flex-[10] bg-white justify-center items-center">

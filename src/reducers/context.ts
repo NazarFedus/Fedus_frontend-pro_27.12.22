@@ -14,9 +14,11 @@ export const reducer = (state: IMenu, action: IAction) => {
                return {...state, burgers: state.burgers.map((e: IProduct) => e.name === action.payload ? {...e, choosed: true} : {...e, choosed: false})}
           }
           case CHOOSE_FILLING: {
+               if(state.burgers.find(e => e.choosed) === undefined) return {...state}
                return {...state, filling: state.filling.map((e: IProduct) => e.name === action.payload ? {...e, choosed: true} : {...e, choosed: false})}
           }
           case CHOOSE_SUPPLEMENTS: {
+               if(state.burgers.find(e => e.choosed) === undefined) return {...state}
                return {...state, supplements: state.supplements.map((e: IProduct) => e.name === action.payload ? {...e, choosed: true} : {...e, choosed: false})}
           }
 
