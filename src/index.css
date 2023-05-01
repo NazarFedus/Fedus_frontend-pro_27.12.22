@@ -9,4 +9,7 @@
      .category{
           @apply flex-[33] flex flex-col items-center
      }
+     .custom-btn-result{
+          @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded
+     }
 }
