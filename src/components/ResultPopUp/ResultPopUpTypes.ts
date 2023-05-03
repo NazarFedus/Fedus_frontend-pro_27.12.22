@@ -1,6 +1,6 @@
 export interface IResultPopUp {
   show: boolean;
-  order: String[],
+  order: IResult,
   handleClose: () => void;
 }
 

@@ -8,8 +8,8 @@ function App() {
   return (
     <TodoProvider>
       <div className="w-full h-[100vh] bg-slate-500 flex">
-        <Menu></Menu>
-        <ResultPopUp></ResultPopUp>
+        <Menu />
+        <ResultPopUp />
       </div>
     </TodoProvider>
   );
