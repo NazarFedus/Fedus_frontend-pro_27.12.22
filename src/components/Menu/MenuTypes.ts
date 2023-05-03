@@ -6,8 +6,13 @@ export interface IProduct {
      type: string,
      choosed: boolean
 }
+export interface ITotal {
+     price: number,
+     calories: number
+}
 export interface IMenu {
      burgers: IProduct[],
      filling: IProduct[],
      supplements: IProduct[]
+     total: ITotal
 }

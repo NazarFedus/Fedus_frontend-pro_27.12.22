@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { menu } from "../data/data.mock";
-import { CHOOSE_BURGER, CHOOSE_FILLING, CHOOSE_SUPPLEMENTS, DELETE_FILLING, DELETE_SUPPLEMENTS } from "./actions";
+import { CHOOSE_BURGER, CHOOSE_FILLING, CHOOSE_SUPPLEMENTS, COUNT_TOTALS, DELETE_FILLING, DELETE_SUPPLEMENTS } from "./actions";
 import { IProduct, IMenu} from "../components/Menu/MenuTypes";
 import { IAction } from "./contextTypes";
 
@@ -28,5 +28,11 @@ export const reducer = (state: IMenu, action: IAction) => {
           case DELETE_SUPPLEMENTS: {
                return {...state, supplements: state.supplements.map((e: IProduct) => e.name === action.payload ? {...e, choosed: false} : {...e})}
           }
+
+          case COUNT_TOTALS: {
+               return {...state, totals: {price: 0, calories: 0}}
+          }
      }
 }
+
+

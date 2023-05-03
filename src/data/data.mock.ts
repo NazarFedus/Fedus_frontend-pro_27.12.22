@@ -62,5 +62,6 @@ export const menu: IMenu = {
                type: 'SUPPLEMENTS',
                choosed: false
           }
-     ]
+     ],
+     total: {price: 0, calories: 0}
 }
