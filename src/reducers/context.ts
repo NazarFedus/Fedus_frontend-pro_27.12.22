@@ -3,8 +3,12 @@ import { menu } from "../data/data.mock";
 import { CHOOSE_BURGER, CHOOSE_FILLING, CHOOSE_SUPPLEMENTS, DELETE_FILLING, DELETE_SUPPLEMENTS } from "./actions";
 import { IProduct, IMenu} from "../components/Menu/MenuTypes";
 import { IAction } from "./contextTypes";
+import { IContextProps } from "./contextTypes";
 
-export const MenuContext = createContext({});
+export const MenuContext = createContext<IContextProps>({
+     state: {},
+     dispatch: () => {}
+});
 
 export const initialState = menu;
 

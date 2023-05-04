@@ -5,5 +5,5 @@ export interface IContextProps {
 }
 export interface IAction {
      type: string,
-     payload?: string
+     payload?: string | number
 }

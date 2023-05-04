@@ -6,8 +6,6 @@ export default function ResultPopUp({
   handleClose,
 }: IResultPopUp) {
 
-  console.log(order)
-
   return (
     <div className="relative">
       {show && (
@@ -20,7 +18,7 @@ export default function ResultPopUp({
               onClick={handleClose}
               className="mt-4 bg-blue-500 text-white font-bold py-2 px-4 rounded"
             >
-              Close Popup
+              Close
             </button>
           </div>
         </div>

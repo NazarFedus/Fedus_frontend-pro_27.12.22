@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState, useEffect } from "react";
+import { FC, useContext, useState, useEffect } from "react";
 import { MenuContext } from "../../reducers/context";
 import ProductCard from "../ui/ProductCard/ProductCard";
 import { IMenu, IProduct, ITotal } from "./MenuTypes";
@@ -8,8 +8,6 @@ const Menu: FC = () => {
   const { state } = useContext(MenuContext);
   const [order, setOrder] = useState<string>("");
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
-
-  console.log(state);
 
   const showOrder = (): string => {
     const result = [];

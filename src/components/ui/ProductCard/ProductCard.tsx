@@ -1,6 +1,5 @@
 import * as React from "react";
 import { IProduct } from "../../Menu/MenuTypes";
-import { IContextProps } from "../../../reducers/contextTypes";
 
 // images //
 import big_burger from "../../../images/burgers/big.jpg";
