@@ -1,0 +1,30 @@
+.sidebar-wrapper{
+     display: flex;
+     flex-direction: column;
+     flex: 25%;
+     padding: 50px 0px 0px 40px;
+     height: 100vh;
+     background-color: #212A3E;
+     gap: 25px;
+}
+
+.link-list{
+     display: flex;
+     flex-direction: column;
+     gap: 7px;
+
+}
+.link{
+     color: #9BA4B5;
+     text-decoration: none;
+     font-size: 18px;
+     font-family: 'Nunito', sans-serif;
+}
+.link:hover{
+     color: #F1F6F9;
+     transition: 0.8s;
+}
+
+.active-link{
+     color: #F1F6F9;
+}

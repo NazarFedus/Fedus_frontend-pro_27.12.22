@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+
+body{
+     margin: 0;
+     padding: 0;
+}
+.home-wrapper{
+
+}
+
+.title{
+     color: #FFFF;
+     text-decoration: none;
+     font-size: 22px;
+}

@@ -1,13 +1,14 @@
-import React from "react"
+import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+
+import Layout from "./Layout/Layout";
 
 function App() {
-
-
   return (
-    <div className="App">
-      
-    </div>
-  )
+    <Layout>
+      <Outlet />
+    </Layout>
+  );
 }
 
-export default App
+export default App;
