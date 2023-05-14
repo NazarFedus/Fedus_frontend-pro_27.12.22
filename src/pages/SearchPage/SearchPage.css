@@ -1,4 +1,5 @@
 .wrapper-page{
      flex: 70%;
      background-color:#394867;
+     min-height: 100vh;
 }

@@ -1,4 +1,10 @@
-.wrapper-page{
-     flex: 70%;
-     background-color:#394867;
+.wrapper-page {
+  display: flex;
+  min-height: 100vh;
+  height: 100%;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex: 70%;
+  background-color: #394867;
 }

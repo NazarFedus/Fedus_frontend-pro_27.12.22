@@ -37538,5 +37538,13 @@
       "url": "https://via.placeholder.com/600/6dd9cb",
       "thumbnailUrl": "https://via.placeholder.com/150/6dd9cb"
     }
+  ],
+  "appUsers": [
+    {
+      "username": "Nazar",
+      "email": "nazarfedus5@gmail.com",
+      "password": "12345678",
+      "id": 1
+    }
   ]
 }

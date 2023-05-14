@@ -5,11 +5,13 @@ import './index.css'
 import { RouterProvider } from "react-router-dom";
 
 import { createBrowserRouter, useLoaderData } from "react-router-dom";
-import { fetchUsers, fetchUser } from "./routes/fetchingFunctions";
+import { fetchArtists, fetchUser } from "./routes/fetchingFunctions";
 import Layout from "./Layout/Layout";
 import HomePage from "./pages/HomePage/HomePage";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import LibraryPage from "./pages/LibraryPage/LibraryPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 
 const router = createBrowserRouter([
   {
@@ -27,20 +29,30 @@ const router = createBrowserRouter([
       {
         path: '/library',
         element: <LibraryPage />,
-        loader: fetchUsers,
+        loader: fetchArtists,
       },
-
+      // {
+      //   path: '/create-playlist',
+      //   element: <CreatePlaylistPage />
+      // },
+      // {
+      //   path: '/liked-songs',
+      //   element: <LikedSongsPage />
+      // },
+      // {
+      //   path: '/your-episodes',
+      //   element: <YourEpisodesPage />
+      // }
     ]
-
   },
   {
-
+    path: '/login',
+    element: <LoginPage />,
   },
-  // {
-  //   path: '/users',
-  //   loader: fetchUsers,
-  //   element: <Users />
-  // }
+  {
+    path: '/register',
+    element: <RegisterPage />
+  }
   // {
   //   path: "user/:id",
   //   loader: ({ params }) => fetchUser(params.id),
