@@ -1,16 +1,11 @@
 export interface IUser {
-     id: number;
-     name: string;
-     username: string;
-     email: string;
-     address: {
-       street: string;
-       suite: string;
-       city: string;
-       zipcode: string;
-       geo: {
-         lat: string;
-         lng: string;
-       };
-     };
- }
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: TAddress;
+  geo: TGeo;
+}
+
+type TAddress = Record<"street" | "suite" | "city" | "zipcode", string>;
+type TGeo = Record<"lat" | "lng", string>;
