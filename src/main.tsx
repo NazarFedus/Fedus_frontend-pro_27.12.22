@@ -5,7 +5,7 @@ import './index.css'
 import { RouterProvider } from "react-router-dom";
 
 import { createBrowserRouter} from "react-router-dom";
-import { fetchAlbum, fetchArtists } from "./routes/fetchingFunctions";
+import { fetchAlbum, fetchArtists } from "./Helpers/fetchData";
 import Layout from "./Layout/Layout";
 import HomePage from "./pages/HomePage/HomePage";
 import SearchPage from "./pages/SearchPage/SearchPage";

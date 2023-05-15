@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Card, Avatar } from "antd";
 import axios from "axios";
-import AlbumCard from "../AlbumCard/AlbumCard";
 import { IAlbum } from "../../../types/AlbumTypes";
 import { IArtistProps } from "./ArtistCardTypes";
 import "./styles.css";
@@ -21,7 +20,7 @@ const ArtistCard: FC<IArtistProps> = ({ artist }) => {
       console.log(error);
     }
   };
-  
+
   useEffect(() => {
      showAlbums()
   }, [])

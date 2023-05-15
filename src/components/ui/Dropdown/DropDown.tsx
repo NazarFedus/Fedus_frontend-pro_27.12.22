@@ -1,22 +1,17 @@
 import React, { FC, useState } from "react";
 import "./styles.css";
-import { DownOutlined } from "@ant-design/icons";
 import { Menu, MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import { IAlbum } from "../../../types/AlbumTypes";
 import { Link } from "react-router-dom";
 import { mutateAlbumsData } from "../../../Helpers/dataMutations";
 
-const DropDown: FC<IAlbum[]> = ({ albums }) => {
+const DropDown: FC<IAlbum[]|[]> = ({ albums }) => {
      const [isAlbumListVisible, setAlbumListVisible] = useState<boolean>(false);
-     console.log(albums)
-     mutateAlbumsData(albums)
-     const data = mutateAlbumsData(albums)
-     console.log(data)
+
      const items: MenuProps['items'] = mutateAlbumsData(albums)
 
-
-     const showAlbums = (e) => {
+     const showAlbums = (e: React.MouseEvent<HTMLElement>) => {
           e.preventDefault()
           setAlbumListVisible(!isAlbumListVisible);
      }
@@ -25,8 +20,8 @@ const DropDown: FC<IAlbum[]> = ({ albums }) => {
     <Dropdown
       overlay={
         <Menu>
-          {items.map((item) => (
-            <Link to={`/album/${item.key}`}><Menu.Item key={item.key} className="tab">{item.label}</Menu.Item></Link>
+          {items.map((item) => ( item !== null ?
+            <Link to={`/album/${item.key}`}><Menu.Item key={item.key} className="tab">{item.label}</Menu.Item></Link> : null
           ))}
         </Menu>
       }
