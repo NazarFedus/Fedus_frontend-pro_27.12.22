@@ -25,11 +25,16 @@ export const fetchUser = async (id: string) => {
      }
 }
 
-// export const fetchArtistAvatar = async () => {
-//      try {
-//           const artistAvatar = await axios.get('https://randomuser.me/api/portraits/men/75.jpg');
-//           return artistAvatar
-//      } catch(e) {
-//           console.log(e)
-//      }
-// }
+export const fetchAlbum = async (id: string) => {
+     try{
+          const album = await axios.get(`http://localhost:3000/albums/${id}`);
+          const photos = await axios.get(`http://localhost:3000/photos/${id}`);
+          return {
+               album: album.data,
+               photos: photos.data
+          }
+     }catch(e: any){
+          console.log(e);
+          throw Error;
+     }
+}

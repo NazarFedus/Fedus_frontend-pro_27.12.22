@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-// import "./index.css";
+import "./styles.css";
 import { DownOutlined } from "@ant-design/icons";
 import { Menu, MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
@@ -15,7 +15,6 @@ const DropDown: FC<IAlbum[]> = ({ albums }) => {
      console.log(data)
      const items: MenuProps['items'] = mutateAlbumsData(albums)
 
-     //    console.log(items)
 
      const showAlbums = (e) => {
           e.preventDefault()
@@ -27,7 +26,7 @@ const DropDown: FC<IAlbum[]> = ({ albums }) => {
       overlay={
         <Menu>
           {items.map((item) => (
-            <Menu.Item key={item.key}>{item.label}</Menu.Item>
+            <Link to={`/album/${item.key}`}><Menu.Item key={item.key} className="tab">{item.label}</Menu.Item></Link>
           ))}
         </Menu>
       }
