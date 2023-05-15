@@ -1,0 +1,8 @@
+.album_card{
+     margin-top: 10px;
+     display: flex;
+     justify-content: space-between;
+     margin: 3px;
+     border: 1px solid green;
+     width: 100%;
+}

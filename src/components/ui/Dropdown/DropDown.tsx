@@ -1,37 +1,49 @@
-import React, { FC } from "react";
-import "./index.css";
+import React, { FC, useState } from "react";
+// import "./index.css";
 import { DownOutlined } from "@ant-design/icons";
-import type { MenuProps } from "antd";
+import { Menu, MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import { IAlbum } from "../../../types/AlbumTypes";
+import { Link } from "react-router-dom";
+import { mutateAlbumsData } from "../../../Helpers/dataMutations";
 
-const items: MenuProps["items"] = [
-  {
-    label: <a href="https://www.antgroup.com">1st menu item</a>,
-    key: "0",
-  },
-  {
-    label: <a href="https://www.aliyun.com">2nd menu item</a>,
-    key: "1",
-  },
-  {
-    type: "divider",
-  },
-  {
-    label: "3rd menu item",
-    key: "3",
-  },
-];
+const DropDown: FC<IAlbum[]> = ({ albums }) => {
+     const [isAlbumListVisible, setAlbumListVisible] = useState<boolean>(false);
+     console.log(albums)
+     mutateAlbumsData(albums)
+     const data = mutateAlbumsData(albums)
+     console.log(data)
+     const items: MenuProps['items'] = mutateAlbumsData(albums)
 
-const DropDown:FC <IAlbum[]> = ({albums}) => (
-  <Dropdown menu={{ albums }} trigger={["click"]}>
-    <a onClick={(e) => e.preventDefault()}>
-      <Space>
-        Albums
-        <DownOutlined />
-      </Space>
-    </a>
-  </Dropdown>
-);
+     //    console.log(items)
+
+     const showAlbums = (e) => {
+          e.preventDefault()
+          setAlbumListVisible(!isAlbumListVisible);
+     }
+
+  return (
+    <Dropdown
+      overlay={
+        <Menu>
+          {items.map((item) => (
+            <Menu.Item key={item.key}>{item.label}</Menu.Item>
+          ))}
+        </Menu>
+      }
+      visible={isAlbumListVisible}
+      onVisibleChange={setAlbumListVisible}
+      trigger={["click"]}
+    >
+      <div onClick={showAlbums}>
+        <Space>
+          <>
+            Albums
+          </>
+        </Space>
+      </div>
+    </Dropdown>
+  );
+};
 
 export default DropDown;

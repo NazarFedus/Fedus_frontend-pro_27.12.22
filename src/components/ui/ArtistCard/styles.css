@@ -4,4 +4,9 @@
 .btn-action{
      display: flex;
      justify-content: center;
+     width: 100%;
+}
+.action-icon{
+     width: 18px;
+     height: 18px;
 }

@@ -4,9 +4,9 @@ import { IAlbumProps } from '../../../types/AlbumTypes'
 
 const AlbumCard: FC<IAlbumProps> = ({title}) => {
   return (
-    <div className=''>
+    <div className='album_card'>
           <p>{title}</p>
-          <button>Show Photo</button>
+          <button>Photo</button>
     </div>
   )
 }
